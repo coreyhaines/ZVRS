@@ -12,3 +12,8 @@ Feature: Viewing the captured email address
     Given that 5 email addresses have been collected
     When I go to the page that shows the email addresses
     Then I should see the collected email addresses
+    
+  Scenario: Obtaining list of email addresses in JSON format
+    Given that 5 email addresses have been collected
+    When I go to the page that shows the email addreses in JSON format
+    Then I should see the collected email addresses in JSON format

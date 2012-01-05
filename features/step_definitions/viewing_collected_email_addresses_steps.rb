@@ -5,7 +5,6 @@ end
 Given /^that (\d+) email addresses have been collected$/ do |number_of_leads|
   number_of_leads.to_i.times do |index|
     Lead.create email: "foo#{index}@example.com"
-    # puts "foo#{index}@example.com lead created"
   end
 end
 
@@ -19,7 +18,14 @@ end
 
 Then /^I should see the collected email addresses$/ do
   Lead.all.each do |lead|
-    puts lead.email
     page.should have_content(lead.email)
   end  
+end
+
+When /^I go to the page that shows the email addreses in JSON format$/ do
+  visit email_leads_url(:format => :json)
+end
+
+Then /^I should see the collected email addresses in JSON format$/ do
+  page.should have_content(Lead.all.to_json)
 end
