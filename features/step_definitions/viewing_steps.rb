@@ -21,5 +21,9 @@ Then /^I should see the collected email addresses$/ do
   addresses.each do |address|
     page.should have_content(address.address)
   end
+
+  if addresses.any?
+    page.should_not have_content("Sorry, nobody is interested, yet")
+  end
 end
 

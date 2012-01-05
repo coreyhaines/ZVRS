@@ -1,6 +1,7 @@
 %h1 Email Addresses
 
-%p Sorry, nobody is interested, yet
+-if @addresses.empty?
+  %p Sorry, nobody is interested, yet
 
 %ul
   -@addresses.each do |address|
