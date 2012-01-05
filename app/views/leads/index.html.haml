@@ -1,0 +1,8 @@
+%h1 Email Addresses
+
+-if @leads.empty?
+  %p Sorry, nobody is interested, yet
+
+%ul
+  -@leads.each do |lead|
+    %li=lead.address

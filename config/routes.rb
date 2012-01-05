@@ -1,5 +1,5 @@
 ShowYourInterest::Application.routes.draw do
-  resources :email_addresses, only: [:index]
+  resources :leads, only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
