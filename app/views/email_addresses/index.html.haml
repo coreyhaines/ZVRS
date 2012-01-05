@@ -1,3 +1,7 @@
 %h1 Email Addresses
 
 %p Sorry, nobody is interested, yet
+
+%ul
+  -@addresses.each do |address|
+    %li=address.address
