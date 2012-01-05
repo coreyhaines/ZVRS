@@ -1,0 +1,8 @@
+%h1 Leads
+
+%p We are sorry, nobody is interested, but don't take it personally
+
+%ul
+  - @leads.each do |lead|
+    %li= lead.email_address
+

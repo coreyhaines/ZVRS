@@ -1,4 +1,7 @@
 ShowYourInterest::Application.routes.draw do
+  get "leads/index"
+
+  resources :leads, only: [:index]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
