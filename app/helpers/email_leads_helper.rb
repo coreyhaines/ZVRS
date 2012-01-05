@@ -1,0 +1,2 @@
+module EmailLeadsHelper
+end
