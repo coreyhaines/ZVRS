@@ -4,5 +4,5 @@
 
 %ul
   - @leads.each do |lead|
-    %li= lead.email_address
+    %li{:id => "signups_lead_#{lead.id}"} #{lead.email_address} has brought #{lead.signup_count} signups
 

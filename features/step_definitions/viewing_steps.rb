@@ -21,3 +21,16 @@ Then /^I should see the collected email addresses$/ do
     page.should have_content(lead.email_address)
   end
 end
+
+Given /^a specific lead has brought (\d+) signups$/ do |signup_count|
+  @lead = Lead.create email_address: "foo@example.com"
+  signup_count.to_i.times do
+    @lead.add_another_signup!
+  end
+end
+
+Then /^I should see that lead has brought (\d+) signups$/ do |signup_count|
+  within("#signups_lead_#{@lead.id}") do
+    page.should have_content(signup_count)
+  end
+end

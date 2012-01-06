@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20120105201719) do
 
   create_table "leads", :force => true do |t|
     t.string   "email_address"
+    t.integer  "signup_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
