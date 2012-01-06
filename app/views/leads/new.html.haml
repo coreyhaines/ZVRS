@@ -1,0 +1,7 @@
+= form_for @lead do |f|
+  %p
+    = f.label :email_address
+    %br
+    = f.text_field :email_address
+  %p
+    = submit_tag "I'm interested"
