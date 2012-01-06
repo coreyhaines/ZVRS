@@ -9,7 +9,7 @@ Given /^that (\d+) email addresses have been collected$/ do |number_of_leads|
 end
 
 When /^I go to the page that shows the email addresses$/ do
-  visit email_leads_url
+  visit lead_index_url
 end
 
 Then /^I should see that nobody is interested yet$/ do
@@ -23,7 +23,7 @@ Then /^I should see the collected email addresses$/ do
 end
 
 When /^I go to the page that shows the email addreses in JSON format$/ do
-  visit email_leads_url(:format => :json)
+  visit lead_index_url(:format => :json)
 end
 
 Then /^I should see the collected email addresses in JSON format$/ do
