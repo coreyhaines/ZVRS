@@ -19,4 +19,13 @@ describe EmailLeadsController do
       assigns[:lead].should == lead      
     end
   end
+  
+  # describe "POST create" do
+  #   it "redirects to the show page for the created lead and increases signups count by 1" do
+  #     lead = stub_model(Lead)
+  #     Lead.stub(:create) { lead }
+  #     post :create, :lead => {}
+  #     response.should redirect_to(lead_url(lead))
+  #   end    
+  # end
 end

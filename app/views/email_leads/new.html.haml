@@ -1,4 +1,5 @@
 = form_for @lead, :url => {:action => "create"} do |f|
+  = hidden_field_tag :referral_key, @referral_key
   = f.label :email, "Email address"
   = f.text_field :email
   = f.submit "I'm interested in being spammed"

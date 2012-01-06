@@ -32,3 +32,16 @@ Then /^I should see that lead has brought (\d+) signups$/ do |signup_count|
     page.should have_content(signup_count)
   end
 end
+
+
+Given /^I sign up under the specific leads referral$/ do
+  @lead = Lead.last
+  visit new_lead_url(:referral_key => @lead.referral_key)
+  fill_in "Email address", :with => "interested@example.com"
+  click_button "I'm interested in being spammed"
+end
+
+Then /^the specific lead should have (\d+) signups$/ do |signup_count|
+  @lead.reload
+  @lead.signups.should == signup_count.to_i
+end

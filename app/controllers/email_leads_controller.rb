@@ -10,15 +10,21 @@ class EmailLeadsController < ApplicationController
 
   def new
     @lead = Lead.new
-    
+    @referral_key = params[:referral_key]
   end
   
   def create
     lead = Lead.create params[:lead]
+    
+    #Pseudo-code
+    # separate from the lead created up above
+    # find the lead for the referral key if it in the params[:referral_key]
+    @referral_lead = Lead.find_by_referral_key(params[:referral_key])
+    @referral_lead.add_another_signup! if @referral_lead
+    # call the #add_another_signup! for that lead
+    
     redirect_to lead_url(lead)
-   # @lead.save
-    #redirect_to @lead
-    #render :text => "Thanks for showing interest, interested@example.com. You will be spamed"
+    
   end
   
   def show

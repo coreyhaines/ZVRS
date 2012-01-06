@@ -4,8 +4,17 @@ class Lead < ActiveRecord::Base
     update_attribute :signups, signups.to_i + 1
     # signups += 1
   end
+
+
+
+
+
+  def referral_key
+    id
+  end
   
-  # def signups
-  #   5
-  # end
+  def self.find_by_referral_key(key)
+    find_by_id key
+  end
+
 end
