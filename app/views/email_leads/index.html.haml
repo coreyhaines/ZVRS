@@ -1,4 +1,6 @@
 Sorry, nobody is interested, yet
 
+%ul
 - @leads.each do |lead|
-  = lead.email
+  %li{:id => "signups_lead_1"}= "#{lead.email} #{lead.signups}"
+

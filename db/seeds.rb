@@ -8,5 +8,5 @@
 
 Lead.destroy_all
 5.times do |index|
-  Lead.create :email => "foo#{index}@example.com"
+  Lead.create :email => "foo#{index}@example.com", :signups => index
 end

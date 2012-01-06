@@ -17,3 +17,9 @@ Feature: Viewing the captured email address
     Given that 5 email addresses have been collected
     When I go to the page that shows the email addreses in JSON format
     Then I should see the collected email addresses in JSON format
+    
+  Scenario: Seeeing how many people have signed up under a specific emails referral key
+    Given a specific lead has brought 5 signups
+    When I go to the page that shows the email addresses
+    Then I should see that lead has brought 5 signups
+    
