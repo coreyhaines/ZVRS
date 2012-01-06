@@ -1,7 +1,5 @@
 class Lead < ActiveRecord::Base
   def add_another_signup!
-    self.signup_count ||= 0
-    self.signup_count += 1
-    self.save
+    update_attribute(:signup_count, signup_count.to_i + 1)
   end
 end
